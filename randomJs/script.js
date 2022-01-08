@@ -21,3 +21,8 @@ function repeat(n, action) {
 
 
 repeat(5, console.log);
+
+let labels = [];
+repeat(5, (j) => labels.push(`item ${j}`));
+
+console.log(labels);
