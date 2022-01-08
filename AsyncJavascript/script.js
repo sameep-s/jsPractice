@@ -48,7 +48,7 @@ lotteryPromise
 
 
 const getPosition = function () {
-    return new Promise((resolve, reject){
+    return new Promise((resolve, reject) => {
 
         navigator.geolocation.getCurrentPosition(resolve, reject);
     });
