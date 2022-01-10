@@ -134,11 +134,15 @@ console.log(oddEven(26));
 // Why - NaN 2 added to undefined is not a number.
 
 const defaultExample = (a, b) => a + b;
-console.log(defaultExample(2));
+console.log(defaultExample(2, 6));
 
 
 
+var sam = 20;
+var sam = 46;
 
+console.log(sam);
+console.log(`${sam}`);
 
 
 
