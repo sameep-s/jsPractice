@@ -139,10 +139,10 @@ console.log(defaultExample(2, 6));
 
 
 var sam = 20;
-var sam = 46;
+var sam = 45;
 
 console.log(sam);
-console.log(`${sam}`);
+console.log(`${sam + 0}`);
 
 
 
