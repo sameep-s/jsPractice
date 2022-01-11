@@ -128,7 +128,6 @@ isOne(55);
 const oddEven = (num) => num % 2 ? 'odd' : 'even';
 
 console.log(oddEven(26));
-*/
 
 // Ex 13
 // Why - NaN 2 added to undefined is not a number.
@@ -143,6 +142,12 @@ var sam = 45;
 
 console.log(sam);
 console.log(`${sam + 0}`);
+
+
+
+*/
+
+// nullish coalescing operator(??)
 
 
 
