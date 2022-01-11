@@ -145,9 +145,29 @@ console.log(`${sam + 0}`);
 
 
 
-*/
 
 // nullish coalescing operator(??)
+
+const foo = null;
+
+console.log(foo);
+const sam = foo ?? 24;
+
+console.log(sam);
+
+
+*/
+
+
+
+// Some examples
+
+// NOTE: cannot chian nullish coalescing operator with AND or OR operators.
+
+let foo;
+
+let dummyText = foo || 'Hello';
+console.log(dummyText);
 
 
 
