@@ -94,7 +94,6 @@ daysMonth('september');
 // ----------------------------Q6 end ---------------------------
 
 
-*/
 
 
 // -----------------------------  INTERMEDIATE  ------------------------
@@ -102,7 +101,62 @@ daysMonth('september');
 
 // ------------------------------ Q1 ------------------------------------
 
+// print pattern
 
+const printPattern = num => {
+
+    let str = '*';
+
+    for (let i = 0; i < num; i++) {
+        console.log(str);
+        str += '*';
+    }
+}
+
+printPattern(5);
+
+
+
+
+const mirrorPattern = num => {
+
+    let str = `* `;
+    let spc = ``;
+    let j = 0;
+
+    for (let i = 0; i < num; i++) {
+        for (let j = 1; num; j++) {
+            spc += ` `;
+        }
+
+        console.log(`${spc} ${str}`);
+        str += `* `;
+    }
+}
+
+mirrorPattern(6);
+
+
+*/
+
+
+
+const mirrorPattern = num => {
+    let str = `*`;
+
+    for (let i = 0; i < num; i++) {
+        let spc = ``;
+
+        for (let j = i; j < num - 1; j++) {
+            spc += ` `;
+        }
+
+        console.log(`${spc} ${str}`);
+        str += `*`;
+    }
+}
+
+mirrorPattern(5);
 
 
 
