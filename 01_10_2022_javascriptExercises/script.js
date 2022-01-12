@@ -170,6 +170,8 @@ console.log(`dummyText`);
 
 // -------------------------- ARROW FUNCTION V/S NORMAL FUNCTIONS
 
+let name = 'sameep';
+
 let user = {
     name: "GFG",
     gfg1: () => {
@@ -182,9 +184,6 @@ let user = {
 
 user.gfg1();
 user.gfg2();
-
-
-
 
 
 
