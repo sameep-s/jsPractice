@@ -166,7 +166,6 @@ let dummyText = foo || 'Hello';
 
 console.log(`dummyText`);
 
-*/
 
 // -------------------------- ARROW FUNCTION V/S NORMAL FUNCTIONS
 
@@ -187,4 +186,39 @@ user.gfg2();
 
 
 
+
+
+
+const arithmeticsObj = {
+    sum: (num1, num2) => num1 + num2,
+    multiply: (num1, num2) => num1 * num2
+
+};
+
+console.log(arithmeticsObj.sum(55, 46));
+console.log(arithmeticsObj.multiply(55, 46));
+
+
+
+
+function packIt(...args) {
+    return console.log(args);
+}
+
+packIt(1, 2, 3, 5, 5);
+
+
+
+
+*/
+
+
+
+const arr = ["MA", "TA", "PA", "CA"];
+
+const [firstName, surName] = arr;
+
+
+console.log(firstName);
+console.log(surName);
 

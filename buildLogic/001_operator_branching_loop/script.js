@@ -79,7 +79,7 @@ minVal(35, 29, 46);
 
 
 
-const daysMonth = (keyMonth) => {
+const daysMonth = keyMonth => {
 
     const monthsDays = ['january', 'march', 'may', 'july', 'august', 'october', 'december'];
     keyMonth = keyMonth.toLowerCase();
@@ -97,6 +97,10 @@ daysMonth('september');
 */
 
 
+// -----------------------------  INTERMEDIATE  ------------------------
+
+
+// ------------------------------ Q1 ------------------------------------
 
 
 
