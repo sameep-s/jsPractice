@@ -147,11 +147,11 @@ const numberPattern = num => {
 
 numberPattern(5);
 
-*/
 
 
 // ------------------------- 13/jan/2011 -----------------------
 
+// Ex1
 const fizzBuzz = (len) => {
     const arr = [];
 
@@ -171,6 +171,62 @@ const fizzBuzz = (len) => {
 }
 
 console.log(fizzBuzz(25));
+
+
+// -------------------------------------------
+// Ex2
+
+
+const printPattern = level => {
+    let str = `*`;
+
+    for (let i = 0; i < level; i++) {
+        console.log(str);
+        str += `*`;
+    }
+    console.log(`level: ${level}`);
+}
+
+printPattern(8);
+
+
+
+// ---------------------------------
+// Ex 3 
+
+const printTwelve = num => {
+    const numNew = num * 12;
+
+    for (let i = 1; i <= 10; i++) {
+        console.log(`${numNew} x ${i} = ${numNew * i}.`);
+    }
+}
+
+
+printTwelve(3);
+
+*/
+
+
+// ---------------------------------
+// Ex 4 fibonacci series
+
+const fibonacci = num => {
+    let n1 = 0;
+    let n2 = 1;
+    let fib = 0;
+
+    for (let i = 0; i < num; i++) {
+        console.log(`${fib}`);
+        n1 = n2;
+        n2 = fib;
+        fib = n1 + n2;
+    }
+
+}
+
+fibonacci(12);
+
 
 
 
