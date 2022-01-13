@@ -101,6 +101,8 @@ daysMonth('september');
 
 // ------------------------------ Q1 ------------------------------------
 
+
+
 // print pattern
 
 const printPattern = num => {
@@ -119,29 +121,6 @@ printPattern(5);
 
 
 const mirrorPattern = num => {
-
-    let str = `* `;
-    let spc = ``;
-    let j = 0;
-
-    for (let i = 0; i < num; i++) {
-        for (let j = 1; num; j++) {
-            spc += ` `;
-        }
-
-        console.log(`${spc} ${str}`);
-        str += `* `;
-    }
-}
-
-mirrorPattern(6);
-
-
-*/
-
-
-
-const mirrorPattern = num => {
     let str = `*`;
 
     for (let i = 0; i < num; i++) {
@@ -150,16 +129,48 @@ const mirrorPattern = num => {
         for (let j = i; j < num - 1; j++) {
             spc += ` `;
         }
-
-        console.log(`${spc} ${str}`);
+        console.log(`${spc}${str}`);
         str += `*`;
     }
 }
 
-mirrorPattern(5);
+mirrorPattern(6);
 
 
 
+const numberPattern = num => {
+
+    for (let i = 1; i <= num; i++) {
+
+    }
+}
+
+numberPattern(5);
+
+*/
+
+
+// ------------------------- 13/jan/2011 -----------------------
+
+const fizzBuzz = (len) => {
+    const arr = [];
+
+    for (let i = 1; i <= len; i++) {
+        if ((i % 3 == 0) && (i % 5 == 0)) {
+            arr.push('FizzBuzz');
+        } else if (i % 5 == 0) {
+            arr.push('Buzz');
+        } else if (i % 3 == 0) {
+            arr.push('Fizz');
+        } else {
+            arr.push(i);
+        }
+    }
+
+    return arr;
+}
+
+console.log(fizzBuzz(25));
 
 
 
