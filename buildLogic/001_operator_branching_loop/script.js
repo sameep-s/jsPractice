@@ -192,7 +192,7 @@ printPattern(8);
 
 
 // ---------------------------------
-// Ex 3 
+// Ex 3
 
 const printTwelve = num => {
     const numNew = num * 12;
@@ -205,7 +205,6 @@ const printTwelve = num => {
 
 printTwelve(3);
 
-*/
 
 
 // ---------------------------------
@@ -229,12 +228,53 @@ fibonacci(12);
 
 
 
+// ------------------------------------
+// Ex5 - factorial
+
+const fact = num => {
+    if (num === 0) {
+        return 1;
+    }
+
+    return num * fact(num - 1);
+}
+
+console.log(fact(6));
+
+
+// ------------------------------------
+// Ex Prime or Not
+
+
+const primeNum = num => {
+
+    if (num <= 0) {
+        return console.log(`Enter a number greater than zero.`);
+    }
+
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            return console.log('Not Prime.');
+        }
+    }
+
+    return console.log('Prime.');
+}
+
+primeNum(121);
 
 
 
 
 
+const weekEndVerify = day => {
+    day = day.toLowerCase();
+    const weekEndDays = ['friday', 'saturday', 'sunday'];
 
+    weekEndDays.indexOf(day) >= 0 ? console.log(` ${day[0].toUpperCase() + day.slice(1)} is a WeekEnd Day.`) : console.log(` ${day} is a WeekDay :( .`);
+}
 
+weekEndVerify('sunday');
 
+*/
 
