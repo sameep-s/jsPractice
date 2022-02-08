@@ -1,3 +1,4 @@
+/**
 // map, reduce and filter
 
 // ----------------------------- MAP -----------------------
@@ -49,3 +50,39 @@ const op5 = arr.reduce((acc, cur) => {
 // printing on console
 console.log(output4);
 console.log(op5);
+
+
+*/
+
+/*
+// ------------------------------------- Functional Programming exercises
+// map, filter, reduce.
+
+arr = [1, 3, 5, 2, 22, 11, 9];
+
+// ------------------------------------
+const oddNumber = (sum, cur) => {
+    cur % 2 === 0 ? cur : sum += cur
+    return sum;
+};
+
+
+// -------------------------------------
+var evenSum = 0, oddSum = 0;
+const oddNumberObj = (sum, cur) => {
+    cur % 2 === 0 ? evenSum += cur : oddSum += cur;
+    return { oddSum, evenSum };
+}
+
+const isOdd = arr.reduce(oddNumberObj);
+console.log(isOdd);
+
+*/
+
+
+// ------------------------- Find the biggest number in the array
+
+
+
+
+
