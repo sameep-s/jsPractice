@@ -315,4 +315,30 @@ const totalElements = input
 console.log(totalElements);
 
 
+
+
+// Q) Flatten an array without using flat().
+
+
+const input = [
+    ['a', 'b', 'c'],
+    ['c', 'd', 'e'],
+    ['e', 'd', 'f'],
+];
+
+const inputFlat = [...input[0], ...input[1], ...input[2]];
+
+console.log(inputFlat);
+
+// Q) count occurances of the flat array
+
+const occurFlat = inputFlat.reduce((acc, cur) => {
+    acc[cur] ? acc[cur] += 1 : acc[cur] = 1;
+
+    return acc;
+}, {});
+
+console.log(occurFlat);
+
+
 */
