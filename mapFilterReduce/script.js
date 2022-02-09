@@ -264,7 +264,6 @@ console.log(youngOld);
 console.log(sol);
 
 
-*/
 
 
 // Q.) Numeronyms
@@ -278,3 +277,40 @@ const numeronyms = input
     .join('  ');
 
 console.log(numeronyms);
+
+
+
+// n! with map and reduce
+// hint : map, fill, reduce.
+
+const input = 6;
+
+const arr = new Array(input)
+    .fill(0)
+    .map((curVal, index) => index + 1)
+    .reduce((acc, curVal) => acc * curVal);
+
+
+console.log(arr);
+
+*/
+
+
+// Count elements in array of arrays
+
+const input = [
+    ['a', 'b', 'c'],
+    ['c', 'd', 'f'],
+    ['d', 'f', 'g'],
+];
+
+const totalElements = input
+    .flat()
+    .reduce((acc, cur) => {
+        if (acc[cur]) { acc[cur] += 1; }
+        else { acc[cur] = 1; }
+
+        return acc;
+    }, {});
+
+console.log(totalElements);
