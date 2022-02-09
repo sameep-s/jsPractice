@@ -176,4 +176,105 @@ console.log(stre);
 
 // ------------------------------------------ Js practice- map, filter, reduce 9th Feb 2022.
 
+/*
 
+// Q1 Array Squared
+
+
+const input = [1, 2, 3, 4, 5];
+
+
+const inputSq = input.map(num => num * num);
+console.log(inputSq);
+
+
+
+
+// Q2 sum of +ve element
+
+const input = [1, -4, 12, 0, -3, 29, -150];
+
+const sumInput = input.reduce((sum, cur) => {
+    cur > 0 ? sum += cur : cur
+    return sum
+}, 0);
+
+console.log(sumInput);
+
+
+
+
+
+// Q3 Calculate median and mean
+const input = [12, 46, 32, 64];
+
+const inputMedian = input.reduce((acc, cur, index, arr) => {
+
+    acc.mean += cur / arr.length;
+    index === arr.length / 2 ? acc.median = cur : cur;
+
+    return acc;
+
+}, { mean: 0, median: 0 });
+
+console.log(inputMedian);
+
+
+
+
+// Q4 Get name initials
+
+const input = 'George Raymond Richard Martin';
+
+const initials = input.split(" ").map(word => word[0]).join('');
+console.log(initials);
+
+
+
+// Age difference from youngest to oldest
+
+const input = [
+    {
+        name: 'John',
+        age: 13
+    },
+    {
+        name: 'Mark',
+        age: 56,
+    },
+    {
+        name: 'Rachel',
+        age: 45,
+    },
+    {
+        name: 'Nate',
+        age: 67,
+    },
+    {
+        name: 'Jeniffer',
+        age: 65,
+    }
+];
+
+
+const youngOld = input.map(obj => obj.age);
+const sol = [Math.min(...youngOld), Math.max(...youngOld), Math.max(...youngOld) - Math.min(...youngOld)];
+
+console.log(youngOld);
+console.log(sol);
+
+
+*/
+
+
+// Q.) Numeronyms
+
+const input = 'Every developer likes to mix kubernetes and javascript';
+const createNnumeronyms = word => word[0] + (word.length - 2) + word[word.length - 1];
+
+const numeronyms = input
+    .split(' ')
+    .map(word => word.length > 4 ? createNnumeronyms(word) : word)
+    .join('  ');
+
+console.log(numeronyms);
