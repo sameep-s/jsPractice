@@ -80,9 +80,100 @@ console.log(isOdd);
 */
 
 
+/**
+
 // ------------------------- Find the biggest number in the array
 
+// Given an array.
+// Write a function to change all even numbers in an array to odd numbers by adding 1 to it.
+// const arr = [1, 2, 3, 58, 5, 6, 24, 8, 15, 4];
+
+// Your output should be:
+// [1, 3, 3, 59, 5, 7, 25, 9, 15, 5]
 
 
+
+// ------------------------- class akanksha
+const arr = [1, 2, 3, 58, 5, 6, 24, 8, 15, 4];
+
+const arrNew = arr.map(num => num % 2 === 0 ? num += 1 : num);
+console.log(arrNew);
+
+
+
+const arr = [
+    {
+        name: "Jay",
+        age: 60
+    },
+    {
+        name: "Gloria",
+        age: 36
+    },
+    {
+        name: "Manny",
+        age: 16
+    },
+    {
+        name: "Joe",
+        age: 9
+    }
+]
+
+
+// Your output should be: 121
+
+arrAge = arr.reduce((sum, cur) => sum += cur.age, 0);
+console.log(arrAge);
+
+
+
+const family = [
+    {
+        name: 'Tanay',
+        haveCycle: true
+    },
+    {
+        name: 'Akanksha',
+        haveCycle: false
+    },
+    {
+        name: 'Tanvi',
+        haveCycle: true
+    },
+    {
+        name: 'Kanak',
+        haveCycle: false
+    }
+];
+
+
+const cycleOwner = family.filter(obj => {
+    obj.haveCycle ?  )
+console.log(cycleOwner);
+
+
+
+const arr = ["You", "all", "are", "rockstars"];
+
+// Your output should be:
+// { '0': "You", '1': "all", '2': "are", '3': "rockstars" }
+
+
+
+const arr = ["Violet", "Indigo", "Blue", "Green", "Yellow", "Orange", "Red"]
+
+
+// Your output should be:
+// Violet-Indigo-Blue-Green-Yellow-Orange-Red
+
+const stre = arr.join("-");
+console.log(stre);
+
+
+*/
+
+
+// ------------------------------------------ Js practice- map, filter, reduce 9th Feb 2022.
 
 

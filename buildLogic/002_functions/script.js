@@ -51,7 +51,7 @@ noOfWords('We are neoGrammers');
 
 
 // --------------------------------- 30 jan tanay promises classes ----------------------------
-//
+// 
 
 const nameLength = (name_) => {
     let nameL = name_.length;
@@ -149,12 +149,4 @@ syncCallsToServer('hii', 'how are you?');
 
 
 */
-
-
-
-// ------------------------------------- Functional Programming exercises
-
-
-
-
 
