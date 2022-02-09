@@ -293,10 +293,9 @@ const arr = new Array(input)
 
 console.log(arr);
 
-*/
 
 
-// Count elements in array of arrays
+// Q) Count elements in array of arrays
 
 const input = [
     ['a', 'b', 'c'],
@@ -314,3 +313,6 @@ const totalElements = input
     }, {});
 
 console.log(totalElements);
+
+
+*/
