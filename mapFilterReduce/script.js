@@ -342,3 +342,23 @@ console.log(occurFlat);
 
 
 */
+
+
+
+// # Initial State: { passwordsMatch: false }
+
+// # Initial View
+//     - passwordsMatch ? if no, then keep error hidden, else show error.
+// - View: error show
+
+
+// #  Event
+//     - Read Input.
+// - Use that Input to match password.
+
+// # new state
+//     - if passwordsMatch then set state to { passwordMatch : true }
+
+// # new view
+//     -passwordMatch ? if yes, then keep error hidden, else show error.
+// - View: Show passwords match.
