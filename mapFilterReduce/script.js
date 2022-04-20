@@ -367,3 +367,16 @@ console.log(occurFlat);
 
 // 04/March/2022
 // working on createContext
+
+
+const findMax = (...args) => {
+    const max = args.reduce((acc, curr) => {
+        acc < curr ? (acc = curr) : acc;
+
+        return acc;
+    });
+    console.log(max);
+    return max;
+};
+
+findMax(3, 5, 9, 1, 26, 345, 5, 54089, 65, 3, 2, 1);
