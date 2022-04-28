@@ -369,6 +369,7 @@ console.log(occurFlat);
 // working on createContext
 
 
+/* 
 const findMax = (...args) => {
     const max = args.reduce((acc, curr) => {
         acc < curr ? (acc = curr) : acc;
@@ -380,3 +381,64 @@ const findMax = (...args) => {
 };
 
 findMax(3, 5, 9, 1, 26, 345, 5, 54089, 65, 3, 2, 1);
+
+
+*/
+
+
+// ------------------------------------------- call , bind, apply
+
+
+// --------------------------------------------call
+
+Function.prototype.myCall = function (scope, ...args) {
+    scope._this = this;
+    console.log(this);
+    return scope._this(...args);
+}
+
+// --------------------------------------------apply
+
+Function.prototype.myApply = function (scope, args) {
+    scope._this = this;
+    return scope._this(...args)
+}
+
+
+// --------------------------------------------Bind
+
+Function.prototype.myBind = function (scope, ...args) {
+    scope._this = this;
+    return function () {
+        return scope._this(...args);
+    }
+}
+
+
+
+
+
+
+const personObj = {
+    name: "Sameep",
+    branch: "CSE"
+}
+
+function printName(n, b) {
+    console.log(`name: ${this.name}, branch: ${this.branch} | paramaterName:${n} parameterBranch:${b}`);
+}
+
+
+// --------------------------------------------myCall
+
+printName.myCall(personObj);
+
+
+// --------------------------------------------myApply
+
+printName.myApply(personObj, ["a", "b"]);
+
+// ---------------------------------------------myBind
+
+const newBind = printName.myBind(personObj, 24, 244);
+newBind();
