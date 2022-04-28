@@ -393,7 +393,6 @@ findMax(3, 5, 9, 1, 26, 345, 5, 54089, 65, 3, 2, 1);
 
 Function.prototype.myCall = function (scope, ...args) {
     scope._this = this;
-    console.log(this);
     return scope._this(...args);
 }
 
@@ -425,13 +424,13 @@ const personObj = {
 }
 
 function printName(n, b) {
-    console.log(`name: ${this.name}, branch: ${this.branch} | paramaterName:${n} parameterBranch:${b}`);
+    console.log(`name: ${this.name}, branch: ${this.branch} | paramaterName: ${n} parameterBranch: ${b}.`);
 }
 
 
 // --------------------------------------------myCall
 
-printName.myCall(personObj);
+printName.myCall(personObj, 99, 84);
 
 
 // --------------------------------------------myApply
