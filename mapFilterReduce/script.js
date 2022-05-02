@@ -1,3 +1,5 @@
+'use strict';
+
 /**
 // map, reduce and filter
 
@@ -469,4 +471,51 @@ function defangString(str) {
 
 const input = "255.100.50.0";
 
-defangString(input)
+// defangString(input)
+
+
+// Q2
+
+const inputRVowel = "neoGCamp";
+
+function reverseVowel(str) {
+
+    const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+    const strVowels = [];
+    let j = 0;
+    const str3 = [...str]
+
+    str3.forEach((e) => {
+        vowels.includes(e) ? strVowels.push(e) : e = 33;
+    })
+
+    for (let i = 0; i < str3.length; i++) {
+        if (vowels.includes(str3[i])) {
+            str3[i] = strVowels[strVowels.length - 1 - j]
+            j++
+        }
+        else str3[i];
+    }
+
+
+    console.log(str3);
+}
+
+
+// reverseVowel(inputRVowel);
+
+// Q3//
+
+const summerFruits = "aA", fruits = "aaAAbbbb";
+
+function uniqueFruits(sF, fruits) {
+    const fruitArr = [...fruits];
+    let output = 0;
+
+    for (let i = 0; i < fruitArr.length; i++) {
+        console.log(fruitArr[i]);
+    }
+
+}
+
+uniqueFruits(summerFruits, fruits);
