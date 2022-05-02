@@ -513,9 +513,10 @@ function uniqueFruits(sF, fruits) {
     let output = 0;
 
     for (let i = 0; i < fruitArr.length; i++) {
-        console.log(fruitArr[i]);
+        sF.includes(fruitArr[i]) ? output++ : output;
     }
 
+    return output;
 }
 
 uniqueFruits(summerFruits, fruits);
