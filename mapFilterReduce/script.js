@@ -449,3 +449,24 @@ newBind();
 
 
 // ----------------------------------------------------------EVENT DELEGATION
+
+
+// ----------------------------------------------------------QOTD 02-05-2022
+
+
+// Q1
+function defangString(str) {
+
+    let str2 = '';
+
+    [...str].forEach(e => {
+        e === '.' ? str2 += "[.]" : str2 += e;
+    });
+
+
+    return str2;
+}
+
+const input = "255.100.50.0";
+
+defangString(input)
