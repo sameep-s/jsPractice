@@ -417,6 +417,13 @@ Function.prototype.myBind = function (scope, ...args) {
     }
 }
 
+Function.prototype.mybIndd = function (scope, ...args){
+    scope._this = this;
+    return function (){
+    return scope._this(...args)
+    }
+}
+
 
 
 const personObj = {
@@ -506,17 +513,69 @@ function reverseVowel(str) {
 
 // Q3//
 
-const summerFruits = "aA", fruits = "aaAAbbbb";
+// const summerFruits = "aA", fruits = "aaAAbbbb";
 
-function uniqueFruits(sF, fruits) {
-    const fruitArr = [...fruits];
-    let output = 0;
+// function uniqueFruits(sF, fruits) {
+//     const fruitArr = [...fruits];
+//     let output = 0;
 
-    for (let i = 0; i < fruitArr.length; i++) {
-        sF.includes(fruitArr[i]) ? output++ : output;
-    }
+//     for (let i = 0; i < fruitArr.length; i++) {
+//         sF.includes(fruitArr[i]) ? output++ : output;
+//     }
 
-    return output;
+//     return output;
+// }
+
+// uniqueFruits(summerFruits, fruits);
+
+
+
+
+// ------------------------------------------------------------Memoize
+
+
+function print2(n) {
+    for (let i = 0; i < n; i++) { }
+    return 2;
 }
 
-uniqueFruits(summerFruits, fruits);
+function memoize(cb) {
+    let cache = {};
+    return function (...args) {
+        const n = args[0];
+        if (n in cache) {
+            return cache[n];
+        } else {
+            cache[n] = cb(n);
+            return cache[n];
+        }
+    };
+}
+
+const memoizedPrint = memoize(print2);
+
+// console.time();
+// console.log(`------------------------------------------`);
+// print2(1000000000);
+// console.timeEnd();
+
+console.time();
+console.log(`------------------------------------------Memoize print1`);
+memoizedPrint(10000000000);
+console.timeEnd();
+
+console.time();
+console.log(`------------------------------------------Memoize print2`);
+memoizedPrint(10000000000);
+console.timeEnd();
+
+console.time();
+console.log(`------------------------------------------Memoize print3`);
+memoizedPrint(10000000000);
+console.timeEnd();
+
+console.time();
+console.log(`------------------------------------------Memoize print4`);
+memoizedPrint(10000000000);
+console.timeEnd();
+
