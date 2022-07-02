@@ -533,7 +533,7 @@ function reverseVowel(str) {
 
 // ------------------------------------------------------------Memoize
 
-
+/*
 function print2(n) {
     for (let i = 0; i < n; i++) { }
     return 2;
@@ -573,4 +573,21 @@ console.time();
 console.log(`------------------------------------------Memoize print4`);
 memoizedPrint(10000000000);
 console.timeEnd();
+
+*/
+
+
+// ---------------------------  Function Currying  -------------------------
+
+
+function sumCurry(a) {
+    return function (b) {
+        if (b) return sumCurry(a + b);
+
+        return a;
+    };
+}
+
+
+console.log(`sumCurry:`, sumCurry(234)(3422)());
 
