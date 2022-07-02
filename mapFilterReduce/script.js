@@ -554,11 +554,6 @@ function memoize(cb) {
 
 const memoizedPrint = memoize(print2);
 
-// console.time();
-// console.log(`------------------------------------------`);
-// print2(1000000000);
-// console.timeEnd();
-
 console.time();
 console.log(`------------------------------------------Memoize print1`);
 memoizedPrint(10000000000);
