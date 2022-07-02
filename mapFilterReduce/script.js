@@ -579,6 +579,7 @@ console.timeEnd();
 
 // ---------------------------  Function Currying  -------------------------
 
+/*
 
 function sumCurry(a) {
     return function (b) {
@@ -591,3 +592,45 @@ function sumCurry(a) {
 
 console.log(`sumCurry:`, sumCurry(234)(3422)());
 
+*/
+
+
+
+// ---------------------------  map, filter, reduce - polyfill  -------------------------
+
+
+// ------------------MAP
+
+const myArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+Array.prototype.myMap = function (cb) {
+    console.log(this);
+    let newArr = [];
+
+    for (let i = 0; i < this.length; i++) {
+        newArr.push(cb(this[i]));
+    };
+
+    return newArr
+}
+
+// const newArr = myArr.myMap((i) => i * 11);
+// console.log(`newArray:`, newArr);
+
+
+
+// ------------------ Filter
+
+
+Array.prototype.myFilter = function (cb) {
+    const newArr = [];
+
+    for (let i = 0; i < this.length; i++) {
+        cb(this[i]) && newArr.push(this[i]);
+    }
+
+    return newArr;
+}
+
+const element = myArr.myFilter((i) => i === 2);
+console.log(`element:`, element);
