@@ -667,6 +667,9 @@ console.log(`arrayReduce: `, arrReduce);
 
 */
 
+
+
+
 // ----------------------------------------------------Promise.all() polyfill
 
 const promise1 = Promise.resolve(2);
