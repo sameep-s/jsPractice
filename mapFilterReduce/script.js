@@ -596,6 +596,7 @@ console.log(`sumCurry:`, sumCurry(234)(3422)());
 
 
 
+/*
 // ---------------------------  map, filter, reduce - polyfill  -------------------------
 
 
@@ -664,5 +665,37 @@ const arrReduce = myArr.myReduce((acc, curr) => {
 console.log(`arrayReduce: `, arrReduce);
 
 
+*/
+
+// ----------------------------------------------------Promise.all() polyfill
+
+const promise1 = Promise.resolve(2);
+const promise2 = 42;
+const promise3 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 1000, 'resolved Value after 1 sec');
+})
+
+Promise.all([promise1, promise2, promise3]).then((val) => console.log(`pValues:`, val));
+
+Promise.myAll = function (promises) {
+
+    let length = 0;
+    let result = [];
+
+    return new Promise((resolve, reject) => {
+
+        promises.forEach((promise, index) => {
+            Promise.resolve(promise).then((resVal) => {
+                length++;
+                result[index] = resVal;
+                length === promises.length && resolve(result);
+            }).catch(e => reject(e));
+        });
+
+    })
+}
+
+
+Promise.myAll([promise1, promise2, promise3]).then((val) => console.log(`P.myAll Values:`, val));
 
 
