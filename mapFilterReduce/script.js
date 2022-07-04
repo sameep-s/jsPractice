@@ -673,12 +673,14 @@ console.log(`arrayReduce: `, arrReduce);
 // ----------------------------------------------------Promise.all() polyfill
 
 const promise1 = Promise.resolve(2);
+
 const promise2 = 42;
+
 const promise3 = new Promise((resolve, reject) => {
     setTimeout(resolve, 1000, 'resolved Value after 1 sec');
-})
+});
 
-Promise.all([promise1, promise2, promise3]).then((val) => console.log(`pValues:`, val));
+Promise.all([promise1, promise2, promise3]).then((val) => console.log(`Promise.all:`, val));
 
 Promise.myAll = function (promises) {
 
@@ -686,7 +688,6 @@ Promise.myAll = function (promises) {
     let result = [];
 
     return new Promise((resolve, reject) => {
-
         promises.forEach((promise, index) => {
             Promise.resolve(promise).then((resVal) => {
                 length++;
@@ -695,10 +696,10 @@ Promise.myAll = function (promises) {
             }).catch(e => reject(e));
         });
 
-    })
+    });
 }
 
 
-Promise.myAll([promise1, promise2, promise3]).then((val) => console.log(`P.myAll Values:`, val));
+Promise.myAll([promise1, promise2, promise3]).then((val) => console.log(`Promise.myAll :`, val));
 
 
