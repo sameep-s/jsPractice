@@ -703,3 +703,22 @@ Promise.myAll = function (promises) {
 Promise.myAll([promise1, promise2, promise3]).then((val) => console.log(`Promise.myAll :`, val));
 
 
+
+// -------------------------------------------------------------------------------------------------------
+
+
+function debounce(cb, delay = 1200) {
+    let interval;
+
+    return function (...args) {
+        clearInterval(interval);
+
+        return interval = setTimeout(() => {
+            cb(...args);
+        }, delay);
+    }
+}
+
+
+const functionDebounced = debounce(() => console.log(`debounced:`), 5000);
+functionDebounced();
