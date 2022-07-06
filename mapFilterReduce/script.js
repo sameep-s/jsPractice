@@ -682,6 +682,24 @@ const promise3 = new Promise((resolve, reject) => {
 
 Promise.all([promise1, promise2, promise3]).then((val) => console.log(`Promise.all:`, val));
 
+
+Promise.myAll2 = function (promises) {
+    let length = 0;
+    let results = [];
+
+    return new Promise((resolve, reject) => {
+
+        promises.map((promise, index) =>
+            Promise.resolve(promise).then((val) => {
+                length++;
+                results[index] = val;
+                length === promises.length && resolve(results);
+            }).catch((e) => reject(e))
+        );
+
+    });
+}
+
 Promise.myAll = function (promises) {
 
     let length = 0;
@@ -707,18 +725,53 @@ Promise.myAll([promise1, promise2, promise3]).then((val) => console.log(`Promise
 // -------------------------------------------------------------------------------------------------------
 
 
-function debounce(cb, delay = 1200) {
-    let interval;
+// function debounce(cb, delay = 1200) {
+//     let interval;
 
-    return function (...args) {
-        clearInterval(interval);
+//     return function (...args) {
+//         clearInterval(interval);
 
-        return interval = setTimeout(() => {
-            cb(...args);
-        }, delay);
+//         return interval = setTimeout(() => {
+//             cb(...args);
+//         }, delay);
+//     }
+// }
+
+
+// const functionDebounced = debounce(() => console.log(`debounced:`), 5000);
+// functionDebounced();
+
+
+// ---------------------------------------------------------------------
+
+/* 
+Function.prototype.myBind = function (scope, ...args) {
+    scope._this = this;
+
+    return function () {
+        return scope._this(...args);
     }
 }
 
+*/
 
-const functionDebounced = debounce(() => console.log(`debounced:`), 5000);
-functionDebounced();
+Array.prototype.myMap = function (cb) {
+    const resultArr = [];
+
+    for (let i = 0; i <= this.length; i++) {
+        resultArr.push[cb(this[i])];
+    };
+
+    return resultArr;
+
+};
+
+Array.prototype.myReduce = function (cb, initialValue) {
+    let accumulator = initialValue;
+
+    for (let i = 0; i < this.length; i++) {
+        accumulator = accumulator ? cb(accumulator, this[i], i, this) : this[i];
+    }
+
+    return accumulator;
+}
