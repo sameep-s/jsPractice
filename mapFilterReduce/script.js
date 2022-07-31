@@ -677,48 +677,31 @@ const promise1 = Promise.resolve(2);
 const promise2 = 42;
 
 const promise3 = new Promise((resolve, reject) => {
-    setTimeout(resolve, 1000, 'resolved Value after 1 sec');
+    setTimeout(resolve, 3000, 'resolved Value after 3 sec');
 });
 
 Promise.all([promise1, promise2, promise3]).then((val) => console.log(`Promise.all:`, val));
 
 
-Promise.myAll2 = function (promises) {
-    let length = 0;
-    let results = [];
+// Promise.myAll = function (promises) {
 
-    return new Promise((resolve, reject) => {
+//     let length = 0;
+//     let result = [];
 
-        promises.map((promise, index) =>
-            Promise.resolve(promise).then((val) => {
-                length++;
-                results[index] = val;
-                length === promises.length && resolve(results);
-            }).catch((e) => reject(e))
-        );
+//     return new Promise((resolve, reject) => {
+//         promises.forEach((promise, index) => {
+//             Promise.resolve(promise).then((resVal) => {
+//                 length++;
+//                 result[index] = resVal;
+//                 length === promises.length && resolve(result);
+//             }).catch(e => reject(e));
+//         });
 
-    });
-}
-
-Promise.myAll = function (promises) {
-
-    let length = 0;
-    let result = [];
-
-    return new Promise((resolve, reject) => {
-        promises.forEach((promise, index) => {
-            Promise.resolve(promise).then((resVal) => {
-                length++;
-                result[index] = resVal;
-                length === promises.length && resolve(result);
-            }).catch(e => reject(e));
-        });
-
-    });
-}
+//     });
+// }
 
 
-Promise.myAll([promise1, promise2, promise3]).then((val) => console.log(`Promise.myAll :`, val));
+// Promise.myAll([promise1, promise2, promise3]).then((val) => console.log(`Promise.myAll :`, val));
 
 
 
@@ -766,12 +749,62 @@ Array.prototype.myMap = function (cb) {
 
 };
 
+// Array.prototype.myReduce = function (cb, initialValue) {
+//     let accumulator = initialValue;
+
+//     for (let i = 0; i < this.length; i++) {
+//         accumulator = accumulator ? cb(accumulator, this[i], i, this) : this[i];
+//     }
+
+//     return accumulator;
+// }
+
+
 Array.prototype.myReduce = function (cb, initialValue) {
-    let accumulator = initialValue;
+    let acc = initialValue;
 
     for (let i = 0; i < this.length; i++) {
-        accumulator = accumulator ? cb(accumulator, this[i], i, this) : this[i];
+        acc = acc ? cb(acc, this[i], i, this) : this[i];
     }
 
-    return accumulator;
+    return acc;
 }
+
+
+Promise.myAll = function (promises) {
+
+    let length = 0;
+    let result = [];
+
+    return new Promise((resolve, reject) => {
+        promises.forEach((promise, index) => {
+            Promise.resolve(promise).then((resVal) => {
+                length++;
+                result[index] = resVal;
+                length === promises.length && resolve(result);
+            }).catch(e => reject(e));
+        });
+
+    });
+}
+
+
+Promise.myAll = function (promises) {
+    let length = 0;
+    let result = [];
+
+    return new Promise((res, rej) => {
+        promises.forEach((promise, index) => {
+            Promise.resolve(promise).then((value) => {
+                length++;
+                result[index] = value;
+                length === promises.length && res(result);
+            }).catch((e) => rej(e));
+        })
+    })
+}
+
+
+
+Promise.myAll([promise1, promise2, promise3]).then((val) => console.log(`Promise.myAllNew :`, val));
+
